@@ -1,0 +1,22 @@
+<p>List your employees here</p>
+
+<table>
+  <tr>
+    <th>First Name </th>
+    <th>Last Name </th>
+    <th>Position </th>
+    <th>Gross Salary </th>
+    <th>Net Pay </th>
+  </tr>
+  <% @employees.each do |employee| %>
+    <tr class="<%= employee.job.downcase %>">
+      <% employee.add_commission %>
+      <% employee.monthly_salary %>
+      <td><%="#{employee.first_name}"  %></td>
+      <td><%="#{employee.last_name}"%></td>
+      <td><%="#{employee.job}"%></td>
+      <td><%="#{employee.gross_salary}"%></td>
+      <td><%="#{employee.net_pay}" %></li></td>
+    </tr>
+  <% end %>
+</table>

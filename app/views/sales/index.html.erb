@@ -1,0 +1,21 @@
+<% require 'pry' %>
+
+<p>List your sales here</p>
+<table>
+<tr>
+<th>Last Name</th>
+<th>Sale Value</th>
+<th>Commission Earned</th>
+</tr>
+
+<% @sales.each do |sale| %>
+  <% sale.calculate_commission %>
+  <tr class="<%= sale.last_name.downcase %>">
+      <td><%= "#{sale.last_name}" %></td>
+      <td><%= "#{sale.gross_sale_value}" %></td>
+      <td><%= "#{sale.commission_earned}" %></td>
+  </tr>
+<% end %>
+</table>
+
+
